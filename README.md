@@ -16,4 +16,6 @@ Mention CI/CD workflow (GitHub Actions with Gradle build + tests).
 ## References
 - Google. (2024). Room persistence library. Android Developers. https://developer.android.com/training/data-storage/room
 - JetBrains. (2024). Kotlin documentation. https://kotlinlang.org/docs/home.html
-- Gradle. (2024). Build automation tool. https://gradle.org/docs/
+- Gradle. (2024). Build automation tool. https://docs.gradle.org/current/userguide/userguide.html
+- GitHub. (2024). GitHub Actions documentation. https://docs.github.com/en/actions
+- Material Design. (2024). Design guidelines. https://m3.material.io
