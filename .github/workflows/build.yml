@@ -21,7 +21,11 @@ jobs:
           distribution: 'temurin'
 
       - name: Gradle build
-        run: ./gradlew build
+        run: |
+          chmod +x gradlew
+          ./gradlew build
 
       - name: Run tests
-        run: ./gradlew test
+        run: |
+          chmod +x gradlew
+          ./gradlew test
