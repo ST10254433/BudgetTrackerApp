@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/BudgetCard">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:title="Add Category"
+        app:titleTextColor="@android:color/white"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/categoryField"
+            android:hint="Category Name"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            style="@style/BudgetInput"/>
+
+        <Button
+            android:foreground="?attr/selectableItemBackground"
+            android:id="@+id/saveCategoryButton"
+            android:text="Save Category"
+            style="@style/BudgetButton"/>
+    </LinearLayout>
+</LinearLayout>

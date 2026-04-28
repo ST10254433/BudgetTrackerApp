@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/BudgetCard">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:title="Expense Entry"
+        app:titleTextColor="@android:color/white"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/descriptionField"
+                android:hint="Expense Description"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                style="@style/BudgetInput"/>
+
+            <EditText
+                android:id="@+id/amountField"
+                android:hint="Amount"
+                android:inputType="numberDecimal"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                style="@style/BudgetInput"/>
+
+            <Spinner
+                android:id="@+id/categorySpinner"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"/>
+
+            <TextView
+                android:id="@+id/goalLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Monthly Goal: R0"
+                style="@style/BudgetText"
+                android:layout_marginTop="12dp"/>
+
+            <SeekBar
+                android:id="@+id/goalSeekBar"
+                android:max="10000"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <!-- Add Photo button -->
+            <Button
+                android:foreground="?attr/selectableItemBackground"
+                android:id="@+id/addPhotoButton"
+                android:text="Add Photo"
+                style="@style/BudgetButton"
+                android:layout_marginTop="12dp"/>
+
+            <!-- Photo preview -->
+            <ImageView
+                android:id="@+id/photoPreview"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:scaleType="centerCrop"
+                android:visibility="gone"
+                android:layout_marginTop="8dp"/>
+
+            <Button
+                android:foreground="?attr/selectableItemBackground"
+                android:id="@+id/saveButton"
+                android:text="Save Expense"
+                style="@style/BudgetButton"
+                android:layout_marginTop="16dp"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

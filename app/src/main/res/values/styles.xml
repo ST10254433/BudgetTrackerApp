@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Button Style -->
+    <style name="BudgetButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:backgroundTint">@color/colorSecondary</item>
+        <item name="android:textColor">@color/colorOnSecondary</item>
+        <!-- Changed from @font/roboto_medium to system sans-serif-medium to fix render issue -->
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+    </style>
+
+    <!-- Text Style -->
+    <style name="BudgetText" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textColor">@color/colorOnBackground</item>
+        <!-- Changed from @font/roboto to system sans-serif to fix render issue -->
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!-- Title Text Style -->
+    <style name="BudgetTitleText" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <!-- Changed from @font/roboto_bold to system sans-serif with bold style to fix render issue -->
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <!-- EditText Style -->
+    <style name="BudgetInput" parent="Widget.MaterialComponents.TextInputEditText.FilledBox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <!-- Changed from @font/roboto to system sans-serif to fix render issue -->
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/colorOnBackground</item>
+        <item name="hintTextColor">@color/colorSecondary</item>
+    </style>
+
+    <style name="BudgetCard">
+        <item name="android:background">@drawable/card_background</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:layout_margin">8dp</item>
+    </style>
+
+</resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary palette -->
+    <color name="colorPrimary">#2E7D32</color> <!-- Rich green -->
+    <color name="colorPrimaryVariant">#1B5E20</color> <!-- Darker green -->
+    <color name="colorSecondary">#FF9800</color> <!-- Vibrant orange -->
+    <color name="colorSecondaryVariant">#F57C00</color>
+    <color name="colorAccent">#FFC107</color> <!-- Amber highlight -->
+
+    <!-- Backgrounds -->
+    <color name="colorBackground">#FAFAFA</color>
+    <color name="colorSurface">#FFFFFF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+
+    <!-- Text -->
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="colorOnSecondary">#000000</color>
+    <color name="colorOnBackground">#212121</color>
+    <color name="colorOnSurface">#212121</color>
+</resources>
