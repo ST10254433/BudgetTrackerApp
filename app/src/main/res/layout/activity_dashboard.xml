@@ -21,6 +21,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+    <ImageView
+        android:id="@+id/dashboardLogo"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@mipmap/ic_launcher_round"
+        android:transitionName="app_logo"
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toTopOf="@id/toolbar"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="Small App Logo"/>
+
     <!-- Card: Expenses Summary -->
     <LinearLayout
         android:id="@+id/summaryCard"
@@ -45,6 +57,22 @@
             android:text="Monthly Goal: R0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
+
+        <ProgressBar
+            android:id="@+id/goalProgress"
+            style="@style/BudgetProgressBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:id="@+id/badgeText"
+            style="@style/BudgetBadgeText"
+            android:text="🏆 Badge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"/>
     </LinearLayout>
 
     <!-- Buttons Section -->
@@ -62,18 +90,42 @@
         <Button
             android:id="@+id/addExpenseButton"
             style="@style/BudgetButton"
-            android:text="➕ Add Expense"/>
+            android:textColor="@android:color/white"
+            android:text="Add Expense"/>
 
         <Button
             android:id="@+id/viewExpensesButton"
             style="@style/BudgetButton"
-            android:text="📋 View Expenses"
+            android:textColor="@android:color/white"
+            android:text="View Expenses"
             android:layout_marginTop="12dp"/>
 
         <Button
             android:id="@+id/addCategoryButton"
             style="@style/BudgetButton"
-            android:text="🏷️ Add Category"
+            android:textColor="@android:color/white"
+            android:text="Add Category"
+            android:layout_marginTop="12dp"/>
+
+        <Button
+            android:id="@+id/graphButton"
+            style="@style/BudgetButton"
+            android:textColor="@android:color/white"
+            android:text="View Graph"
+            android:layout_marginTop="12dp"/>
+
+        <Button
+            android:id="@+id/pdfButton"
+            style="@style/BudgetButton"
+            android:textColor="@android:color/white"
+            android:text="Export PDF"
+            android:layout_marginTop="12dp"/>
+
+        <Button
+            android:id="@+id/darkModeButton"
+            style="@style/BudgetButton"
+            android:textColor="@android:color/white"
+            android:text="Toggle Dark Mode"
             android:layout_marginTop="12dp"/>
     </LinearLayout>
 

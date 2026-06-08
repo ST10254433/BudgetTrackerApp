@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Primary palette -->
     <color name="colorPrimary">#2E7D32</color> <!-- Rich green -->
@@ -13,10 +12,15 @@
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
 
-
     <!-- Text -->
     <color name="colorOnPrimary">#FFFFFF</color>
     <color name="colorOnSecondary">#000000</color>
     <color name="colorOnBackground">#212121</color>
     <color name="colorOnSurface">#212121</color>
+
+    <!-- Status colors -->
+    <color name="successGreen">#4CAF50</color>
+    <color name="errorRed">#F44336</color>
+    <color name="infoBlue">#2196F3</color>
+    <color name="neutralGrey">#9E9E9E</color>
 </resources>

@@ -23,6 +23,7 @@
 
         <EditText
             android:id="@+id/categoryField"
+            android:textColor="@android:color/black"
             android:hint="Category Name"
             android:layout_width="match_parent"
             android:layout_height="48dp"
@@ -32,6 +33,7 @@
             android:foreground="?attr/selectableItemBackground"
             android:id="@+id/saveCategoryButton"
             android:text="Save Category"
+            android:textColor="@android:color/white"
             style="@style/BudgetButton"/>
     </LinearLayout>
 </LinearLayout>

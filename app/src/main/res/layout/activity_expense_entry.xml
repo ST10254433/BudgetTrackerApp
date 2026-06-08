@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     style="@style/BudgetCard">
 
+    <!-- Toolbar -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -15,6 +16,7 @@
         app:titleTextColor="@android:color/white"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
+    <!-- Scrollable content -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -25,34 +27,43 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <!-- Expense description -->
             <EditText
                 android:id="@+id/descriptionField"
                 android:hint="Expense Description"
+                android:textColor="@android:color/black"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 style="@style/BudgetInput"/>
 
+            <!-- Amount -->
             <EditText
                 android:id="@+id/amountField"
+                android:textColor="@android:color/black"
                 android:hint="Amount"
                 android:inputType="numberDecimal"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 style="@style/BudgetInput"/>
 
+            <!-- Category spinner -->
             <Spinner
                 android:id="@+id/categorySpinner"
+                android:textColor="@android:color/black"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"/>
 
+            <!-- Goal label -->
             <TextView
                 android:id="@+id/goalLabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Monthly Goal: R0"
+                android:textColor="@android:color/black"
                 style="@style/BudgetText"
                 android:layout_marginTop="12dp"/>
 
+            <!-- Goal seekbar -->
             <SeekBar
                 android:id="@+id/goalSeekBar"
                 android:max="10000"
@@ -61,13 +72,13 @@
 
             <!-- Add Photo button -->
             <Button
-                android:foreground="?attr/selectableItemBackground"
                 android:id="@+id/addPhotoButton"
                 android:text="Add Photo"
+                android:textColor="@android:color/white"
                 style="@style/BudgetButton"
                 android:layout_marginTop="12dp"/>
 
-            <!-- Photo preview -->
+            <!-- Photo preview (animated with slide_up_fade in Kotlin) -->
             <ImageView
                 android:id="@+id/photoPreview"
                 android:layout_width="120dp"
@@ -76,9 +87,26 @@
                 android:visibility="gone"
                 android:layout_marginTop="8dp"/>
 
+            <!-- Voice input button -->
             <Button
-                android:foreground="?attr/selectableItemBackground"
+                android:id="@+id/voiceButton"
+                android:textColor="@android:color/white"
+                android:text="Voice Input"
+                style="@style/BudgetButton"
+                android:layout_marginTop="12dp"/>
+
+            <!-- PDF export button -->
+            <Button
+                android:id="@+id/pdfButton"
+                android:textColor="@android:color/white"
+                android:text="Export Monthly PDF"
+                style="@style/BudgetButton"
+                android:layout_marginTop="12dp"/>
+
+            <!-- Save expense button -->
+            <Button
                 android:id="@+id/saveButton"
+                android:textColor="@android:color/white"
                 android:text="Save Expense"
                 style="@style/BudgetButton"
                 android:layout_marginTop="16dp"/>

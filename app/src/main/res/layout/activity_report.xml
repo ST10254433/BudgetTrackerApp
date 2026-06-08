@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/BudgetCard">
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:title="Monthly Report"
+        android:titleTextColor="@android:color/white"/>
+
+    <!-- Export PDF -->
+    <Button
+        android:id="@+id/exportPdfButton"
+        android:text="Export PDF"
+        style="@style/BudgetButton"
+        android:layout_marginTop="24dp"/>
+
+    <!-- Share PDF -->
+    <Button
+        android:id="@+id/sharePdfButton"
+        android:text="📤 Share PDF"
+        style="@style/BudgetButton"
+        android:layout_marginTop="12dp"/>
+</LinearLayout>

@@ -1,8 +1,11 @@
 package com.example.budgettrackerapp
 
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.speech.RecognizerIntent
 import android.view.MenuItem
+import android.view.animation.AnimationUtils
 import android.widget.*
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -18,13 +21,18 @@ class ExpenseEntryActivity : AppCompatActivity() {
     private lateinit var goalLabel: TextView
     private lateinit var photoPreview: ImageView
     private lateinit var addPhotoButton: Button
+    private lateinit var voiceButton: Button
+    private lateinit var pdfButton: Button
     private var selectedPhotoUri: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_expense_entry)
 
-        // Toolbar with back arrow
+        // Transition for logo morph
+        window.sharedElementEnterTransition = android.transition.TransitionInflater.from(this)
+            .inflateTransition(android.R.transition.move)
+
+        setContentView(R.layout.activity_expense_entry)
         setSupportActionBar(findViewById(R.id.toolbar))
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
@@ -38,6 +46,8 @@ class ExpenseEntryActivity : AppCompatActivity() {
         goalLabel = findViewById(R.id.goalLabel)
         photoPreview = findViewById(R.id.photoPreview)
         addPhotoButton = findViewById(R.id.addPhotoButton)
+        voiceButton = findViewById(R.id.voiceButton)
+        pdfButton = findViewById(R.id.pdfButton)
 
         // Image picker
         val pickImage = registerForActivityResult(
@@ -46,12 +56,28 @@ class ExpenseEntryActivity : AppCompatActivity() {
             if (uri != null) {
                 selectedPhotoUri = uri.toString()
                 photoPreview.visibility = ImageView.VISIBLE
+                // Animate photo preview
+                photoPreview.startAnimation(AnimationUtils.loadAnimation(this, R.anim.slide_up_fade))
                 photoPreview.setImageURI(uri)
             }
         }
 
         addPhotoButton.setOnClickListener {
             pickImage.launch("image/*")
+        }
+
+        // Voice input
+        voiceButton.setOnClickListener {
+            val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH)
+            intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM)
+            intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Speak your expense description")
+            startActivityForResult(intent, 200)
+        }
+
+        // PDF export shortcut
+        pdfButton.setOnClickListener {
+            startActivity(Intent(this, ReportActivity::class.java))
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
         }
 
         // Load categories
@@ -69,7 +95,6 @@ class ExpenseEntryActivity : AppCompatActivity() {
             }
         }
 
-        // Load existing goal
         val currentGoal = getGoal()
         goalSeekBar.progress = currentGoal
         goalLabel.text = "Monthly Goal: R$currentGoal"
@@ -134,6 +159,15 @@ class ExpenseEntryActivity : AppCompatActivity() {
         return prefs.getInt("maxGoal", 10000)
     }
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == 200 && resultCode == RESULT_OK) {
+            val result = data?.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)
+            val descriptionField = findViewById<EditText>(R.id.descriptionField)
+            descriptionField.setText(result?.get(0))
+        }
+    }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == android.R.id.home) {
             finish()
@@ -146,5 +180,4 @@ class ExpenseEntryActivity : AppCompatActivity() {
         super.finish()
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
     }
-
 }
