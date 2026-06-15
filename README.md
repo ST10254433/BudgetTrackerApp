@@ -20,8 +20,8 @@ BudgetTrackerApp helps users track expenses, set monthly goals, and visualize pe
 - Collaboration with teammates via commits and pull requests.
 
 ## Custom Features
-- Voice input for adding expenses 🎤  
-- Monthly PDF export with share option 📄  
+- Voice input for adding expenses
+- Monthly PDF export with share option 
 - (Extra: Dark mode toggle, animated UI, gamification badges)
 
 ## Demo Video
