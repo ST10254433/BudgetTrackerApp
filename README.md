@@ -3,15 +3,35 @@
 <img width="1778" height="980" alt="Screenshot 2026-04-23 105930" src="https://github.com/user-attachments/assets/4ee5c24b-ba09-46b8-9eeb-21e2d5bf5d9a" />
 
 
-Project name and short description.
+# BudgetTrackerApp
 
-Features (e.g., add expense, categories with RoomDB, Material UI).
+## Purpose
+BudgetTrackerApp helps users track expenses, set monthly goals, and visualize performance with graphs, badges, and reports.
 
-Setup instructions (clone → open in Android Studio → run).
+## Design Considerations
+- Material Design UI with animations (fade, slide, scale).
+- Room Database for local storage.
+- MPAndroidChart for graph visualization.
+- Gamification elements (badges, progress tracking).
 
-Screenshots of the app (dashboard, add expense screen).
+## GitHub & Actions
+- Source code hosted on GitHub for version control.
+- GitHub Actions CI/CD pipeline ensures clean builds (Android CI badge visible).
+- Collaboration with teammates via commits and pull requests.
 
-Mention CI/CD workflow (GitHub Actions with Gradle build + tests).
+## Custom Features
+- Voice input for adding expenses 🎤  
+- Monthly PDF export with share option 📄  
+- (Extra: Dark mode toggle, animated UI, gamification badges)
+
+## Demo Video
+https://youtu.be/WAEinVJhqmo?si=uTU488TiUZGRfQp3
+
+## Tech Stack
+- Android (Kotlin)
+- Room Database
+- MPAndroidChart
+- GitHub Actions CI/CD
 
 ## References
 - Google. (2024). Room persistence library. Android Developers. https://developer.android.com/training/data-storage/room
