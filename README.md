@@ -39,4 +39,3 @@ https://youtu.be/WAEinVJhqmo?si=uTU488TiUZGRfQp3
 - Gradle. (2024). Build automation tool. https://docs.gradle.org/current/userguide/userguide.html
 - GitHub. (2024). GitHub Actions documentation. https://docs.github.com/en/actions
 - Material Design. (2024). Design guidelines. https://m3.material.io
-- Video Link: https://youtu.be/osqC5CB7FZA
